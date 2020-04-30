@@ -1,2 +1,1 @@
-www.yahoo1.com
-www.googlej.com
+www.yahoo1.com,www.googlej.com,www.bit.ly,

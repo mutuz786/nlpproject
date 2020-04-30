@@ -50,14 +50,14 @@ public class ModeratorTest {
 		loginWindow.setVisible(true);
 		loginWindow.setSize(400, 400);
 		TextField commentArea = new TextField();
-		commentArea.setBounds(20, 200, dimension.width / 2 - 10, 100);
+		commentArea.setBounds(20, dimension.height-215, dimension.width / 2 - 10, 100);
 		List field = new List();
 		field.setBounds(dimension.width / 2 + 20, 50, dimension.width / 2 - 40, dimension.height - 100);
 
 		Button close1 = new Button("Close");
-		close1.setBounds(20, 300, 230, 50);
+		close1.setBounds(20, dimension.height-110, 230, 50);
 		Button commentPost = new Button("Comment");
-		commentPost.setBounds(230, 300, 250, 50);
+		commentPost.setBounds(230, dimension.height-110, 250, 50);
 		mainWindow.add(commentPost);
 		mainWindow.add(close1);
 		mainWindow.add(commentArea);

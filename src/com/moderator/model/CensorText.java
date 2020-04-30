@@ -32,7 +32,7 @@ public class CensorText {
 	private boolean isCensored(String text) throws IOException {
 		String[] words = getCensoredWords();
 		for (String word : words) {
-			if (text.contains(word))
+			if (text.equals(word))
 				return true;
 		}
 		return false;
@@ -41,7 +41,7 @@ public class CensorText {
 	private String[] getCensoredWords() throws IOException {
 		Filer filer = new Filer(censorFile);
 		String text = filer.read();
-		return text.split("\n");
+		return text.split(",");
 	}
 
 }

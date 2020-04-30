@@ -1,11 +1,12 @@
-package com.moderator.model;
+package com.moderator.model.test;
 
 import java.io.IOException;
 
-public class ScamRemover {
-	String scamFile = "scamwebsite.txt";
+import com.moderator.model.Filer;
 
-	public String remove(String text) throws IOException {
+public class Test {
+	public static void main(String[] args) throws IOException {
+		String text="this is my new webpage www.bit.ly/jhdgjf/aggvdhgad";
 		String[] textArray = text.split("\\s");
 		for (int i = 0; i < textArray.length; i++) {
 			if (isScam(textArray[i])) {
@@ -18,10 +19,9 @@ public class ScamRemover {
 			if (i != textArray.length - 1)
 				text += " ";
 		}
-		return text;
+		System.out.println(text);
 	}
-
-	private boolean isScam(String text) throws IOException {
+	private static boolean isScam(String text) throws IOException {
 		String[] words = getScammedWebsite();
 		for (String word : words) {
 			if (text.contains(word))
@@ -30,11 +30,10 @@ public class ScamRemover {
 		return false;
 	}
 
-	private String[] getScammedWebsite() throws IOException {
-		Filer filer = new Filer(scamFile);
+	private static String[] getScammedWebsite() throws IOException {
+		Filer filer = new Filer("scamwebsite.txt");
 		String text = filer.read();
 		return text.split(",");
 	}
-
 
 }
